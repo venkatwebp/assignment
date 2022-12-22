@@ -1,0 +1,54 @@
+<div class="main-container">
+    <div class="sign-up-container" fxLayout="column" fxLayoutAlign="center center" fxFlex>
+            <div class="signup-panel-left" fxLayout="column" fxFlex="40">
+                <div class="community-panel">
+                    <div class="logo">Logo</div> 
+                    <p>Login using social media to get quick access</p>
+                    <div class="social-buttons">
+                        <button class="facebook-btn">
+                            <i class="fa fa-facebook-f"></i>
+                            <span>Signin with facebook</span>
+                        </button> 
+                        <button class="twitter-btn">
+                            <i class="fa fa-twitter"></i>
+                            <span>Signin with twitter</span>
+                        </button> 
+                        <button class="google-btn">
+                            <i class="fa fa-google-plus"></i>
+                            <span>Signin with google</span>
+                        </button> 
+                    </div>
+                </div>
+            </div>
+            <div class="signup-panel-right" fxLayout="column" fxFlex="60">
+                <div class="sign-heading">
+                    <h3>Login to your account</h3>
+                    <p>Don’t have an account? 
+                        <a routerLink="/signup">
+                         Sign Up</a>
+                    </p>
+                </div>
+                <form [formGroup]="formValue" class="signupForm" (ngSubmit)="createSignIn()">
+                    <input type="email" [ngClass]="{ 'is-invalid': submitted && f.user_email.errors }" placeholder="Email" formControlName="user_email">
+                    <div *ngIf="submitted && f.user_email.errors" class="invalid-feedback">
+                        <div *ngIf="f.user_email.errors.required">Email is required</div>
+                        <div *ngIf="f.user_email.errors.email">Email is invalid</div>
+                    </div>
+                    <div class="input-visible">
+                        <input type="password" placeholder="Password"  [ngClass]="{ 'is-invalid': submitted && f.user_password.errors }"  formControlName="user_password">
+                    </div>
+                    <div *ngIf="submitted && f.user_password.errors" class="invalid-feedback">
+                        <div *ngIf="f.user_password.errors.required">Password number is required</div>
+                        <div *ngIf="f.user_password.errors.minlength">
+                            Password must be at least 5 characters
+                        </div>
+                      </div>
+                      <div class="signup-btn">
+                        <button>
+                            Sign in
+                        </button> 
+                    </div>
+                </form>
+            </div>
+    </div>
+</div>

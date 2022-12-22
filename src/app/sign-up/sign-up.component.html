@@ -1,0 +1,80 @@
+<div class="main-container">
+    <div class="sign-up-container" fxLayout="column" fxLayoutAlign="center center" fxFlex>
+            <div class="signup-panel-left" fxLayout="column" fxFlex="40">
+                <div class="community-panel">
+                    <div class="logo">Logo</div> 
+                    <p>Login using social media to get quick access</p>
+                    <div class="social-buttons">
+                        <button class="facebook-btn">
+                            <i class="fa fa-facebook-f"></i>
+                            <span>Signin with facebook</span>
+                        </button> 
+                        <button class="twitter-btn">
+                            <i class="fa fa-twitter"></i>
+                            <span>Signin with twitter</span>
+                        </button> 
+                        <button class="google-btn">
+                            <i class="fa fa-google-plus"></i>
+                            <span>Signin with google</span>
+                        </button> 
+                    </div>
+                </div>
+            </div>
+            <div class="signup-panel-right" fxLayout="column" fxFlex="60">
+                <div class="sign-heading">
+                    <h3>Sign up</h3>
+                    <p>Already have an account? <a href="#">Sign in</a></p>
+                </div>
+                <form [formGroup]="formValue" (ngSubmit)="postSignUp()" class="signupForm">
+                    <input type="text" placeholder="First Name"  [ngClass]="{ 'is-invalid': submitted && f.user_firstname.errors }" formControlName="user_firstname">
+                    <div *ngIf="submitted && f.user_firstname.errors" class="invalid-feedback">
+                        <div *ngIf="f.user_firstname.errors.required">First name is required</div>
+                      </div>
+                    <input type="email" [ngClass]="{ 'is-invalid': submitted && f.user_email.errors }" placeholder="Email"  formControlName="user_email">
+                    <div *ngIf="submitted && f.user_email.errors" class="invalid-feedback">
+                        <div *ngIf="f.user_email.errors.required">Email is required</div>
+                        <div *ngIf="f.user_email.errors.email">Email is invalid</div>
+                      </div>
+                    <input type="text" [ngClass]="{ 'is-invalid': submitted && f.user_phone.errors }" placeholder="Phone Number" formControlName="user_phone">
+                    <div *ngIf="submitted && f.user_phone.errors" class="invalid-feedback">
+                        <div *ngIf="f.user_phone.errors.required">Phone number is required</div>
+                        <div *ngIf="f.user_phone.errors.minlength">
+                          Phone number must be at least 10 characters
+                        </div>
+                      </div>
+                    <div class="input-visible">
+                        <input type="password" [ngClass]="{ 'is-invalid': submitted && f.user_password.errors }" placeholder="Password"  formControlName="user_password">
+                    </div>
+                    <div *ngIf="submitted && f.user_password.errors" class="invalid-feedback">
+                        <div *ngIf="f.user_password.errors.required">Password number is required</div>
+                        <div *ngIf="f.user_password.errors.minlength">
+                            Password must be at least 5 characters
+                        </div>
+                      </div>
+                    <input type="text"  placeholder="Last Name" formControlName="user_lastname">
+                    <input type="text" [ngClass]="{ 'is-invalid': submitted && f.user_city.errors }" placeholder="City" formControlName="user_city">
+                    <div *ngIf="submitted && f.user_city.errors" class="invalid-feedback">
+                        <div *ngIf="f.user_city.errors.required">City is required</div>
+                      </div>
+                    <input type="text" [ngClass]="{ 'is-invalid': submitted && f.user_zipcode.errors }" placeholder="Zip Code" formControlName="user_zipcode">
+                    <div *ngIf="submitted && f.user_zipcode.errors" class="invalid-feedback">
+                        <div *ngIf="f.user_zipcode.errors.required">zipcode is required</div>
+                    </div>
+                    <div class="policy-section">
+                        <input type="checkbox" class="check" formControlName="terms">
+                        <p class="term-policy text-muted text-center">I agree to the 
+                            <a href="#">Terms of Service</a> and <a href="#">Privacy Polocy</a>.
+                        </p>
+                    </div>
+                    <div *ngIf="submitted && f.terms.errors" class="invalid-feedback">
+                        <div *ngIf="f.terms.errors.required">Accept terms of Srvice</div>
+                    </div>
+                      <div class="signup-btn">
+                          <button type="submit">
+                              Create your free account
+                          </button> 
+                      </div>
+                </form>
+            </div>
+    </div>
+</div>

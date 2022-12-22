@@ -1,0 +1,80 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat';
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('../src/assets/fonts/montserrat/Montserrat-Regular.eot') format('embedded-opentype'), url('../src/assets/fonts/montserrat/Montserrat-Regular.woff') format('woff'), url('../src/assets/fonts/montserrat/Montserrat-Regular.ttf') format('truetype'), url('../src/assets/fonts/montserrat/Montserrat-Regular.svg') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Montserrat';
+	src: url('../src/assets/fonts/montserrat/Montserrat-Medium.eot?#iefix') format('embedded-opentype'), url('../src/assets/fonts/montserrat/Montserrat-Medium.woff') format('woff'), url('../src/assets/fonts/montserrat/Montserrat-Medium.ttf') format('truetype'), url('../src/assets/fonts/montserrat/Montserrat-Medium.svg') format('svg');
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Montserrat';
+	src: url('../src/assets/fonts/montserrat/Montserrat-SemiBold.eot?#iefix') format('embedded-opentype'), url('../src/assets/fonts/montserrat/Montserrat-SemiBold.woff') format('woff'), url('../src/assets/fonts/montserrat/Montserrat-SemiBold.ttf') format('truetype'), url('../src/assets/fonts/montserrat/Montserrat-SemiBold.svg') format('svg');
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Montserrat';
+	src: url('../src/assets/fonts/montserrat/Montserrat-Bold.eot?#iefix') format('embedded-opentype'), url('../src/assets/fonts/montserrat/Montserrat-Bold.woff') format('woff'), url('../src/assets/fonts/montserrat/Montserrat-Bold.ttf') format('truetype'), url('../src/assets/fonts/montserrat/Montserrat-Bold.svg') format('svg');
+	font-weight: 700;
+	font-style: normal;
+}
+
+// Font Awesome Icon CSS
+// .fa-facebook:before{
+// 	content:"\f09a"
+// }
+
+// common css
+a, a:hover, a:focus{
+	color: #4f77ff;
+	cursor: pointer;
+}
+button:hover{
+	cursor: pointer;
+}
+.small{
+	font-size: 85%;
+}
+.text-muted{
+	color: #777;
+}
+.text-center{
+	text-align: center;
+}
+.invalid-feedback {
+    
+    width: 100% !important;
+    margin-top: 0.25rem !important;
+    font-size: 80% !important;
+    color: #dc3545 !important;
+	margin-left: 120px;
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+
+.is-invalid{
+	border: solid 1px #dc3545 !important;
+}
+.width-50{
+	width: 50%;
+}
+
+
+
+@media screen and (min-width: 300px) and (max-width: 1023px) {
+	.invalid-feedback {
+		margin-left: 60px;
+	}
+}

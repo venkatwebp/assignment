@@ -1,0 +1,41 @@
+<div class="main-container">
+    <div class="header">
+        <div class="logo"> 
+            Logo
+        </div>
+        <button class="logout" (click)="logout()">Logout</button>
+    </div>
+    <div class="banner"> </div>
+    <div class="container"> 
+        <div class="dashboard-section">
+            <div class="dashboard-title">
+                <h3>User Details</h3>
+            </div>
+            <div class="user-section">
+                <div class="profile">
+                    <div class="user-profile">
+                        <div class="user-img">
+                            <img src="../../assets/images/profile.png" >
+                        </div>
+                    </div>
+                    <div class="user-details">
+                        <div *ngFor="let item of userExist | keyvalue">
+                            <div *ngIf="item.value" class="details-row">
+                                <div class="width-50 m-t-20">
+                                 {{item.key}}
+                                </div>
+                                <div class="colon"> : </div>
+                                <div class="user-input width-50">
+                                    {{item.value}}
+                                </div>
+    
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
